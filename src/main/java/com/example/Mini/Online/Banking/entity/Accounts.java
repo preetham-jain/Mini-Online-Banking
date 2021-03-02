@@ -20,4 +20,8 @@ public class Accounts {
     private String account_no;
     private double accoutBalance;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
+
 }

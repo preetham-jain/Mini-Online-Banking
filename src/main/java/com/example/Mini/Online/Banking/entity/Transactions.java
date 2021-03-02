@@ -1,11 +1,14 @@
 package com.example.Mini.Online.Banking.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Getter
+@Setter
 public class Transactions {
     @Id
     @GenericGenerator(name = "transaction_id_seq", strategy = "increment")
@@ -16,5 +19,9 @@ public class Transactions {
     private String status;
     private double amount;
     private double availableBalance;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private Users user;
 
 }

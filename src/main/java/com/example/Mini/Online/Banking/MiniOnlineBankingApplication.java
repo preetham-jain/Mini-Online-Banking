@@ -8,6 +8,8 @@ public class MiniOnlineBankingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MiniOnlineBankingApplication.class, args);
+
+
 	}
 
 }

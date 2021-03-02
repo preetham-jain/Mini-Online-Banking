@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -24,8 +25,10 @@ public class Users {
     private String address;
     private String PIN;
 
-    @OneToOne
-    @JoinColumn( referencedColumnName = "user_id", name = "id")
-    private int id;
+    @OneToMany(mappedBy = "user")
+    private List<Accounts> accounts;
+    @OneToMany(mappedBy = "user")
+    private List<Transactions> transactions;
+
 
 }
