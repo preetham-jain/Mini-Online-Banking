@@ -1,5 +1,6 @@
 package com.example.Mini.Online.Banking.controller;
 
+import com.example.Mini.Online.Banking.dto.LoginRequestDto;
 import com.example.Mini.Online.Banking.dto.UserRequestDto;
 import com.example.Mini.Online.Banking.dto.UserResponseDto;
 import com.example.Mini.Online.Banking.services.UserService;
@@ -18,6 +19,12 @@ public class UserController {
     public UserResponseDto registerUser(@RequestBody UserRequestDto userRequestDto) {
 
         return userService.registerUser(userRequestDto);
+    }
+
+    @PostMapping("/login")
+    public boolean loginUser(@RequestBody LoginRequestDto loginRequestDto) {
+
+        return userService.loginUser(loginRequestDto);
     }
 
 
