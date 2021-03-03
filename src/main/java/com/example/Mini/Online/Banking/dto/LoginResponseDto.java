@@ -1,8 +1,13 @@
 package com.example.Mini.Online.Banking.dto;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class LoginResponseDto {
 
-    private String email;
-    private String password;
+    private Long id;
+    private String message;
 
 }

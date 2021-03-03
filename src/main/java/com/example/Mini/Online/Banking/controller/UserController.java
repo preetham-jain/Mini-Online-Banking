@@ -1,6 +1,7 @@
 package com.example.Mini.Online.Banking.controller;
 
 import com.example.Mini.Online.Banking.dto.LoginRequestDto;
+import com.example.Mini.Online.Banking.dto.LoginResponseDto;
 import com.example.Mini.Online.Banking.dto.UserRequestDto;
 import com.example.Mini.Online.Banking.dto.UserResponseDto;
 import com.example.Mini.Online.Banking.services.UserService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 public class UserController {
 
+
     @Autowired
     private  UserService userService;
 
@@ -22,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public boolean loginUser(@RequestBody LoginRequestDto loginRequestDto) {
+    public LoginResponseDto loginUser(@RequestBody LoginRequestDto loginRequestDto) {
 
         return userService.loginUser(loginRequestDto);
     }

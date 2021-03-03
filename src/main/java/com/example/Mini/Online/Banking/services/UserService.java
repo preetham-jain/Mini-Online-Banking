@@ -9,5 +9,5 @@ public interface UserService {
 
     UserResponseDto registerUser(UserRequestDto userRequestDto);
 
-    boolean loginUser(LoginRequestDto loginRequestDto);
+    LoginResponseDto loginUser(LoginRequestDto loginRequestDto);
 }

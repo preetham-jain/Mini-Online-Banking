@@ -15,7 +15,7 @@ public class Users {
     @GenericGenerator(name = "user_id_seq", strategy = "increment")
     @GeneratedValue(generator = "user_id_seq", strategy = GenerationType.AUTO)
 
-    private int user_id;
+    private Long user_id;
 
     private String firstName;
     private String lastName;
@@ -23,12 +23,9 @@ public class Users {
     private String phone_no;
     private String password;
     private String address;
-    private String PIN;
+  
 
-    @OneToMany(mappedBy = "user")
-    private List<Accounts> accounts;
-    @OneToMany(mappedBy = "user")
-    private List<Transactions> transactions;
+
 
 
 }
